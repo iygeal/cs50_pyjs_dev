@@ -12,6 +12,9 @@ body {
 /* Styling the form */
 form {
   text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack the form elements vertically */
+  align-items: center; /* Center the elements horizontally */
 }
 
 /* Styling the search bar */
