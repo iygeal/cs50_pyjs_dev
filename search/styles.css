@@ -13,7 +13,7 @@ body {
 form {
   text-align: center;
   display: flex;
-  flex-direction: column; /* Stack the form elements vertically */
+  flex-flow: column wrap; /* Stack the form elements vertically and wrap*/
   align-items: center; /* Center the elements horizontally */
 }
 
@@ -24,6 +24,7 @@ input[type="text"] {
   border: 1px solid #ddd;
   border-radius: 25px;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
 /* Styling the submit button */
