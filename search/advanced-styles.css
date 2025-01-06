@@ -1,0 +1,98 @@
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px; /* Add padding for spacing from the edges */
+  background-color: #f8f9fa;
+}
+
+/* Navigation styling */
+.nav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  margin-left: 5px;
+  color: #333;
+  font-size: 7px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Page title styling */
+.page-title {
+  color: red;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+/* Horizontal separator */
+.separator {
+  border: 0.5px solid lightgrey;
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Blank spacer below the separator */
+.spacer {
+  height: 20px;
+}
+
+/* Introductory text */
+.intro-text {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 50%; /* Restrict form width to half the page */
+}
+
+.form-section {
+  display: flex;
+  align-items: center; /* Align labels and inputs horizontally */
+  justify-content: space-between; /* Space between label and input */
+}
+
+label {
+  font-size: 12px;
+  width: 40%; /* Allocate 40% of the row for the label */
+}
+
+input[type="text"] {
+  flex-grow: 1; /* Make the input box take the remaining space */
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Submit button styling */
+.submit-container {
+  display: flex;
+  justify-content: flex-end; /* Align the button to the right */
+}
+
+.submit-button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
