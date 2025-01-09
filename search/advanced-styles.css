@@ -26,8 +26,8 @@ body {
 
 /* Page title styling */
 .page-title {
-  color: red;
-  font-size: 20px;
+  color: rgba(236, 15, 15, 0.863);
+  font-size: 12px;
   margin: 10px 0;
 }
 
@@ -45,16 +45,15 @@ body {
 
 /* Introductory text */
 .intro-text {
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 10px;
+    margin-bottom: 20px;
 }
 
 /* Form styling */
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
   width: 50%; /* Restrict form width to half the page */
 }
 
@@ -65,16 +64,18 @@ form {
 }
 
 label {
-  font-size: 12px;
+  font-size: 8px;
   width: 40%; /* Allocate 40% of the row for the label */
 }
 
 input[type="text"] {
   flex-grow: 1; /* Make the input box take the remaining space */
   padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
+  background-color: transparent;
+  border: 0.5px solid #c2bcbc;
+  border-radius: 1.5px;
+  font-size: 8px;
+  width: 350px
 }
 
 /* Submit button styling */
@@ -84,15 +85,22 @@ input[type="text"] {
 }
 
 .submit-button {
-  background-color: blue;
+  background-color: #236fc6;
   color: white;
   border: none;
-  padding: 8px 12px;
-  font-size: 14px;
-  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 8px;
+  border-radius: 1.5px;
   cursor: pointer;
 }
 
 .submit-button:hover {
   background-color: #0056b3;
+
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none; /* Remove the default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
