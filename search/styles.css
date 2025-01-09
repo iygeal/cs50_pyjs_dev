@@ -13,8 +13,8 @@ body {
 form {
   text-align: center;
   display: flex;
-  flex-flow: column wrap; /* Stack the form elements vertically and wrap*/
-  align-items: center; /* Center the elements horizontally */
+  flex-flow: column wrap;
+  align-items: center;
 }
 
 /* Styling the search bar */
@@ -27,7 +27,14 @@ input[type="text"] {
   margin-bottom: 10px;
 }
 
-/* Styling the submit button */
+/* Styling the submit buttons container */
+.buttons {
+  display: flex;
+  gap: 10px; /* Adds spacing between buttons */
+  justify-content: center; /* Ensures buttons are centered */
+}
+
+/* Styling the submit buttons */
 input[type="submit"] {
   margin-top: 1px;
   padding: 4px 7px;
@@ -46,7 +53,6 @@ input[type="submit"]:hover {
 
 /* Styling the navigation bar */
 .nav {
-
   position: absolute;
   top: 10px;
   right: 10px;
@@ -60,4 +66,10 @@ input[type="submit"]:hover {
 }
 .nav a:hover {
   text-decoration: underline;
+}
+
+input[type="text"]:focus {
+  border-color: transparent;
+  outline: none; /* Remove the default outline */
+  box-shadow: 0 0 5px rgba(211, 228, 246, 0.837);
 }
