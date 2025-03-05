@@ -53,3 +53,24 @@ def search(request):
         })
 
     return redirect("index")  # If no query, go back to index
+
+
+def create_page(request):
+    """This functuion handles the creation of a new page"""
+    if request.method == "POST":
+        # Get the title and content from the form submission
+        title = request.POST.get("title").strip()
+        content = request.POST.get("content")
+
+        # Check if an entry with this title already exists (case-insensitive)
+        if util.get_entry(title) is not None:
+            return render(request, "encyclopedia/error.html", {
+                "message": "An entry with that title already exists."
+            })
+
+        # Save the new entry and redirect to its page
+        util.save_entry(title, content)
+        return redirect("entry_page", title=title)
+
+    # For GET requests, render the new page form
+    return render(request, "encyclopedia/create_page.html")
