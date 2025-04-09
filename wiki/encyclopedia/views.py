@@ -83,6 +83,9 @@ def edit_page(request, title):
         # Process the submitted form data
         content = request.POST.get("content")
         util.save_entry(title, content)
+
+        # Redirect after saving
+        return redirect("entry_page", title=title)
     else:
         # Display the edit form with current content
         content = util.get_entry(title)
