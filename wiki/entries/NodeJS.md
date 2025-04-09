@@ -1,0 +1,1 @@
+NodeJS is the JavaScript runtime environment. It provides the platform to run JavaScript apps.

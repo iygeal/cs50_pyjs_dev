@@ -9,4 +9,6 @@
 <h1>{{ title }}</h1>
 <p>{{ content }}</p>
 
+<a href="{% url 'edit_page' title=title %}">Edit</a>
+
 {% endblock %}

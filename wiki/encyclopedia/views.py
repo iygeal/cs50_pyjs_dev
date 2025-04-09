@@ -74,3 +74,24 @@ def create_page(request):
 
     # For GET requests, render the new page form
     return render(request, "encyclopedia/create_page.html")
+
+
+# Function to handle GET and POST requests for editing an existing page
+def edit_page(request, title):
+    """Handles the editing of an existing page"""
+    if request.method == "POST":
+        # Process the submitted form data
+        content = request.POST.get("content")
+        util.save_entry(title, content)
+    else:
+        # Display the edit form with current content
+        content = util.get_entry(title)
+        if content is None:
+            return render(request, "encyclopedia/error.html", {
+                "message": "The requested page was not found."
+            })
+
+        return render(request, "encyclopedia/edit_page.html", {
+            "title": title,
+            "content": content
+        })
