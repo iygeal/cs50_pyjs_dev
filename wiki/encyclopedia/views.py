@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 
 from . import util
 import random
+import markdown2
 
 
 def index(request):
@@ -12,20 +13,16 @@ def index(request):
 
 def entry_page(request, title):
     """This function fetches the content of the entry page"""
-
-    entries = util.list_entries()
-    formatted_title = next(
-        (entry for entry in entries if entry.upper() == title.upper()), title)
-
-    content = util.get_entry(formatted_title)
-
+    content = util.get_entry(title)
     if content is None:
         return render(request, "encyclopedia/error.html", {
             "message": "The requested page was not found."
         })
+
+    html_content = markdown2.markdown(content)
     return render(request, "encyclopedia/entry_page.html", {
-        "title": formatted_title,
-        "content": content
+        "title": title,
+        "content": html_content
     })
 
 
@@ -107,9 +104,14 @@ def random_page(request):
 
     # If entries exist,
     if entries:
+        # Select a random entry
         random_entry = random.choice(entries)
+
+        # Redirect to the selected entry
         return redirect('entry_page', title=random_entry)
     else:
+
+        # If no entries exist, display an error message
         return render(request, "encyclopedia/error.html", {
             "message": "No entries available."
         })
