@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
 from . import util
+import random
 
 
 def index(request):
@@ -97,4 +98,18 @@ def edit_page(request, title):
         return render(request, "encyclopedia/edit_page.html", {
             "title": title,
             "content": content
+        })
+
+
+def random_page(request):
+    """Redirects to a random encyclopedia entry."""
+    entries = util.list_entries()
+
+    # If entries exist,
+    if entries:
+        random_entry = random.choice(entries)
+        return redirect('entry_page', title=random_entry)
+    else:
+        return render(request, "encyclopedia/error.html", {
+            "message": "No entries available."
         })
